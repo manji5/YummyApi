@@ -1,6 +1,8 @@
-﻿namespace YummyApi.Entities
+﻿using YummyApi.Entities;
+
+namespace YummyApi.Dtos.ProductDtos
 {
-    public class Product
+    public class ResultProductDto
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
@@ -8,6 +10,5 @@
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
         public int? CategoryId { get; set; }
-        public Category Category { get; set; }
     }
 }

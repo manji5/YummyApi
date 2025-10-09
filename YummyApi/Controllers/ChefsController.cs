@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using YummyApi.Context;
+using YummyApi.Dtos.ChefDtos;
 using YummyApi.Entities;
 
 namespace YummyApi.Controllers
@@ -9,10 +11,12 @@ namespace YummyApi.Controllers
     [ApiController]
     public class ChefsController : ControllerBase
     {
+        private readonly IMapper _mapper;
         private readonly ApiContext _context;
 
-        public ChefsController(ApiContext context)
+        public ChefsController(IMapper mapper, ApiContext context)
         {
+            _mapper = mapper;
             _context = context;
         }
 
@@ -20,29 +24,32 @@ namespace YummyApi.Controllers
         public IActionResult ChefList()
         {
             var values = _context.Chefs.ToList();
-            return Ok(values);
+            return Ok(_mapper.Map<List<ResultChefDto>>(values));
         }
 
         [HttpGet("GetChef")]
         public IActionResult GetChef(int id)
         {
-            return Ok(_context.Chefs.Find(id));
+            var value = _context.Chefs.Find(id);
+            return Ok(_mapper.Map<GetByIdChefDto>(value));
         }
 
         [HttpPost]
-        public IActionResult AddChef(Chef chef)
+        public IActionResult CreateChef(CreateChefDto createChefDto)
         {
-            _context.Chefs.Add(chef);
+            var value = _mapper.Map<Chef>(createChefDto);
+            _context.Chefs.Add(value);
             _context.SaveChanges();
             return Ok("Chef is added.");
         }
 
         [HttpPut]
-        public IActionResult UpdateChef(Chef chef)
+        public IActionResult UpdateChef(UpdateChefDto updateChefDto)
         {
-            _context.Chefs.Update(chef);
+            var value = _mapper.Map<Chef>(updateChefDto);
+            _context.Chefs.Update(value);
             _context.SaveChanges();
-            return Ok("Chef name is updated.");
+            return Ok("Chef is updated.");
         }
 
         [HttpDelete]
@@ -51,7 +58,7 @@ namespace YummyApi.Controllers
             var value = _context.Chefs.Find(id);
             _context.Chefs.Remove(value);
             _context.SaveChanges();
-            return Ok("Chef is deleted");
+            return Ok("Chef is deleted.");
         }
     }
 }
