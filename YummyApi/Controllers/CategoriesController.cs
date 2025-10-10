@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using YummyApi.Context;
 using YummyApi.Dtos.CategoryDtos;
@@ -13,12 +15,14 @@ namespace YummyApi.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly IMapper _mapper;
+        private readonly IValidator<Category> _validator;
         private readonly ApiContext _context;
 
-        public CategoriesController(IMapper mapper, ApiContext context)
+        public CategoriesController(IMapper mapper, ApiContext context, IValidator<Category> validator)
         {
             _mapper = mapper;
             _context = context;
+            _validator = validator;
         }
 
         [HttpGet]
@@ -39,18 +43,36 @@ namespace YummyApi.Controllers
         public IActionResult CreateCategory(CreateCategoryDto createCategoryDto)
         {
             var value = _mapper.Map<Category>(createCategoryDto);
-            _context.Categories.Add(value);
-            _context.SaveChanges();
-            return Ok("Category is added.");
+            var valueValidate = _validator.Validate(value);
+
+            if (!valueValidate.IsValid)
+            {
+                return BadRequest(valueValidate.Errors.Select(x => x.ErrorMessage));
+            }
+            else
+            {
+                _context.Categories.Add(value);
+                _context.SaveChanges();
+                return Ok("Category is added.");
+            }
         }
 
         [HttpPut]
         public IActionResult UpdateCategory(UpdateCategoryDto updateCategoryDto)
         {
             var value = _mapper.Map<Category>(updateCategoryDto);
-            _context.Categories.Update(value);
-            _context.SaveChanges();
-            return Ok("Category name is changed.");
+            var valueValidate = _validator.Validate(value);
+
+            if (!valueValidate.IsValid)
+            {
+                return BadRequest(valueValidate.Errors.Select(x => x.ErrorMessage));
+            }
+            else
+            {
+                _context.Categories.Update(value);
+                _context.SaveChanges();
+                return Ok("Category name is changed.");
+            }
         }
 
         [HttpDelete]

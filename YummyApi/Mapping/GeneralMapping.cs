@@ -4,6 +4,7 @@ using YummyApi.Dtos.ChefDtos;
 using YummyApi.Dtos.FeatureDtos;
 using YummyApi.Dtos.MessageDtos;
 using YummyApi.Dtos.ProductDtos;
+using YummyApi.Dtos.ServiceDtos;
 using YummyApi.Entities;
 
 namespace YummyApi.Mapping
@@ -34,10 +35,15 @@ namespace YummyApi.Mapping
             CreateMap<Message, UpdateFeatureDto>().ReverseMap();
             CreateMap<Message, GetByIdMessageDto>().ReverseMap();
 
-            CreateMap<Product, ResultProductDto>().ReverseMap();
+            CreateMap<Product, ResultProductDto>().ForMember(x => x.CategoryName, y => y.MapFrom(z => z.Category.CategoryName)).ReverseMap();
             CreateMap<Product, CreateProductDto>().ReverseMap();
             CreateMap<Product, UpdateProductDto>().ReverseMap();
             CreateMap<Product, GetByIdProductDto>().ReverseMap();
+
+            CreateMap<Service, ResultServiceDto>().ReverseMap();
+            CreateMap<Service, CreateServiceDto>().ReverseMap();
+            CreateMap<Service, UpdateServiceDto>().ReverseMap();
+            CreateMap<Service, GetByIdServiceDto>().ReverseMap();
         }
     }
 }

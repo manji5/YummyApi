@@ -2,6 +2,7 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.Eventing.Reader;
 using YummyApi.Context;
 using YummyApi.Dtos.ProductDtos;
@@ -27,8 +28,8 @@ namespace YummyApi.Controllers
         [HttpGet]
         public IActionResult ProductList()
         {
-            var values = _context.Products.ToList();
-            return Ok(_mapper.Map<List<ResultProductDto>>(values));
+            var value = _context.Products.Include(x => x.Category).ToList();
+            return Ok(_mapper.Map<List<ResultProductDto>>(value));
         }
 
         [HttpGet("GetProduct")]

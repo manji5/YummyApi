@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using YummyApi.Context;
@@ -12,12 +13,14 @@ namespace YummyApi.Controllers
     public class ChefsController : ControllerBase
     {
         private readonly IMapper _mapper;
+        private readonly IValidator<Chef> _validator;
         private readonly ApiContext _context;
 
-        public ChefsController(IMapper mapper, ApiContext context)
+        public ChefsController(IMapper mapper, ApiContext context, IValidator<Chef> validator)
         {
             _mapper = mapper;
             _context = context;
+            _validator = validator;
         }
 
         [HttpGet]
@@ -38,18 +41,36 @@ namespace YummyApi.Controllers
         public IActionResult CreateChef(CreateChefDto createChefDto)
         {
             var value = _mapper.Map<Chef>(createChefDto);
-            _context.Chefs.Add(value);
-            _context.SaveChanges();
-            return Ok("Chef is added.");
+            var valueValidator = _validator.Validate(value);
+
+            if (!valueValidator.IsValid) 
+            {
+                return BadRequest(valueValidator.Errors.Select(x => x.ErrorMessage));
+            }
+            else
+            {
+                _context.Chefs.Add(value);
+                _context.SaveChanges();
+                return Ok("Chef is added.");
+            }
         }
 
         [HttpPut]
         public IActionResult UpdateChef(UpdateChefDto updateChefDto)
         {
             var value = _mapper.Map<Chef>(updateChefDto);
-            _context.Chefs.Update(value);
-            _context.SaveChanges();
-            return Ok("Chef is updated.");
+            var valueValidate = _validator.Validate(value);
+
+            if (!valueValidate.IsValid)
+            {
+                return BadRequest(valueValidate.Errors.Select(x => x.ErrorMessage));
+            }
+            else
+            {
+                _context.Chefs.Update(value);
+                _context.SaveChanges();
+                return Ok("Chef is updated.");
+            }
         }
 
         [HttpDelete]
