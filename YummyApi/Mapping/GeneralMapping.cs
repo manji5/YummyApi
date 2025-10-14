@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using YummyApi.Dtos.CategoryDtos;
 using YummyApi.Dtos.ChefDtos;
+using YummyApi.Dtos.EventDtos;
 using YummyApi.Dtos.FeatureDtos;
 using YummyApi.Dtos.MessageDtos;
 using YummyApi.Dtos.ProductDtos;
 using YummyApi.Dtos.ServiceDtos;
+using YummyApi.Dtos.TestimonialDtos;
 using YummyApi.Entities;
 
 namespace YummyApi.Mapping
@@ -44,6 +46,16 @@ namespace YummyApi.Mapping
             CreateMap<Service, CreateServiceDto>().ReverseMap();
             CreateMap<Service, UpdateServiceDto>().ReverseMap();
             CreateMap<Service, GetByIdServiceDto>().ReverseMap();
+
+            CreateMap<Testimonial, ResultTestimonialDto>().ReverseMap();
+            CreateMap<Testimonial, CreateTestimonialDto>().ReverseMap();
+            CreateMap<Testimonial, UpdateTestimonialDto>().ReverseMap();
+            CreateMap<Testimonial, GetByIdTestimonialDto>().ReverseMap();
+
+            CreateMap<YummyEvent, ResultEventDto>().ReverseMap();
+            CreateMap<YummyEvent, CreateEventDto>().ReverseMap();
+            CreateMap<YummyEvent, UpdateEventDto>().ReverseMap();
+            CreateMap<YummyEvent, GetByIdEventDto>().ReverseMap();
         }
     }
 }

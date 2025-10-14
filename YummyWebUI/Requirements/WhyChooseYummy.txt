@@ -10,3 +10,80 @@ Text: Our chefs blend tradition and creativity, bringing you dishes made to deli
 
 Header: Comfort in every moment
 Text: From warm service to inviting ambiance, we make every visit feel special and every meal unforgettable.
+
+
+Elbette. Aşağıdaki liste, önceki menünün **1 USD = 41.85 TRY** kuru baz alınarak Dolar ($) cinsinden fiyatlandırılmış halidir. Fiyatlar anlamlı olacak şekilde yuvarlanmıştır.
+
+---
+
+### **1. Breakfast (Kahvaltı)**
+
+* **Scrambled Eggs on Toast:** eggs, milk, butter, salt, pepper, toasted bread. - **$4.30**
+* **Pancakes with Maple Syrup:** flour, eggs, milk, butter, served with maple syrup and fresh berries. - **$5.25**
+* **Oatmeal Bowl:** rolled oats, milk or water, honey, topped with banana slices and nuts. - **$3.85**
+
+### **2. Soups (Çorbalar)**
+
+* **Tomato Soup:** fresh tomatoes, vegetable broth, cream, basil, garlic. - **$2.65**
+* **Lentil Soup:** red lentils, onions, carrots, celery, cumin, vegetable broth. - **$2.15**
+* **Chicken Noodle Soup:** chicken broth, shredded chicken, egg noodles, carrots, celery. - **$2.85**
+
+### **3. Starters (Başlangıçlar)**
+
+* **Bruschetta with Tomato & Basil:** toasted bread, fresh tomatoes, garlic, fresh basil, olive oil. - **$3.60**
+* **Garlic Bread with Cheese:** baguette, garlic butter, mozzarella cheese, parsley. - **$3.10**
+* **Spring Rolls:** thin pastry, cabbage, carrots, mushrooms, soy sauce. - **$3.80**
+
+### **4. Salads (Salatalar)**
+
+* **Caesar Salad:** romaine lettuce, croutons, parmesan cheese, Caesar dressing. - **$5.50**
+* **Greek Salad:** tomatoes, cucumbers, red onion, feta cheese, olives, olive oil dressing. - **$5.00**
+* **Grilled Chicken Salad:** mixed greens, grilled chicken breast, cherry tomatoes, corn, vinaigrette dressing. - **$6.20**
+
+### **5. Main Dishes (Ana Yemekler)**
+
+* **Grilled Steak with Potatoes:** beef steak, roasted potatoes, asparagus, pepper sauce. - **$15.55**
+* **Roast Chicken:** whole roasted chicken, herbs, lemon, served with roasted vegetables. - **$10.75**
+* **Salmon with Dill Sauce:** grilled salmon fillet, creamy dill sauce, boiled potatoes, lemon wedge. - **$13.85**
+
+### **6. Pasta & Rice (Makarna & Pilav)**
+
+* **Spaghetti Bolognese:** spaghetti pasta, minced meat, tomato sauce, onions, carrots. - **$6.70**
+* **Fettuccine Alfredo:** fettuccine pasta, creamy parmesan cheese sauce, garlic, parsley. - **$7.15**
+* **Chicken Risotto:** arborio rice, chicken broth, grilled chicken pieces, mushrooms, parmesan cheese. - **$8.15**
+
+### **7. Seafood (Deniz Ürünleri)**
+
+* **Fish and Chips:** battered and fried cod fish, french fries, tartar sauce. - **$9.10**
+* **Grilled Shrimp Skewers:** shrimp, bell peppers, onions, marinated in garlic and lemon. - **$10.00**
+* **Seafood Paella:** saffron rice, shrimp, mussels, calamari, peas, lemon. - **$17.90**
+
+### **8. Desserts (Tatlılar)**
+
+* **Chocolate Lava Cake:** warm chocolate cake with a liquid chocolate center, served with vanilla ice cream. - **$4.55**
+* **Apple Pie:** pastry crust filled with baked apples and cinnamon, served with whipped cream. - **$4.05**
+* **Tiramisu:** layers of coffee-soaked ladyfingers and mascarpone cheese, topped with cocoa powder. - **$4.80**
+
+### **9. Drinks (İçecekler)**
+
+* **Freshly Squeezed Orange Juice:** 100% pure oranges. - **$2.40**
+* **Lemonade:** fresh lemons, water, sugar. - **$1.90**
+* **Cappuccino:** espresso shot, steamed milk, milk foam. - **$2.25**
+
+### **10. Vegetarian Options (Vejetaryen Seçenekler)**
+
+* **Veggie Burger:** vegetable patty (lentils, beans, corn), lettuce, tomato, onion, bun. - **$6.45**
+* **Vegetable Curry:** mixed vegetables (potatoes, carrots, peas) in a coconut curry sauce, served with rice. - **$6.95**
+* **Stuffed Bell Peppers:** bell peppers stuffed with rice, mushrooms, tomatoes, and herbs. - **$6.20**
+
+### **11. Kids' Menu (Çocuk Menüsü)**
+
+* **Chicken Nuggets:** breaded chicken pieces served with french fries and ketchup. - **$4.30**
+* **Macaroni and Cheese:** macaroni pasta in a creamy cheddar cheese sauce. - **$3.60**
+* **Mini Margherita Pizza:** small pizza with tomato sauce and mozzarella cheese. - **$3.85**
+
+### **13. Fast Food**
+
+* **Cheeseburger:** beef patty, cheddar cheese, lettuce, tomato, pickles, bun. - **$6.95**
+* **Chicken Wrap:** grilled chicken strips, lettuce, tomato, mayonnaise, in a flour tortilla. - **$5.95**
+* **Pepperoni Pizza:** pizza crust, tomato sauce, mozzarella cheese, pepperoni slices. - **$7.65**
